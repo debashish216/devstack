@@ -220,5 +220,6 @@ sudo apt-get install --reinstall python-paste
 ```
 sudo pip install . 
 sudo pip install -e .
+```
 
 #### Thank You !
