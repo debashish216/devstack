@@ -1,9 +1,8 @@
-# Cloud Platform Deployment using devstack (Openstack Cloud Platform Service)
+## Cloud Platform Deployment using devstack (Openstack Cloud Platform Service)
 
-## Overview
 In this example, a multi node openstack environment is demonstrated. The setup is a minimal realization having one controller node and one compute node. Both the nodes are created on top of two x86 machines with ubuntu 16.04 distribution.   
 
-## Specifications
+### Specifications
 Software = devstack
 Operating System = Ubuntu 16.04 
 Other Ubuntu distributions also work fine.
@@ -69,15 +68,15 @@ cd devsrack
 ./stack.sh
 ```
 
-This installtion procedure normally takes 30-45 minutes depending upon the Internet speed. In case of any errors,
-unstack it and rerun after fiing the issue.
+This installation procedure normally takes 30-45 minutes depending upon the Internet speed. In case of any errors,
+unstack it and rerun after fixing the issue.
 
 ```
 ./unstack.sh
 ./stack.sh
 ```
 
-* If you receive a message like below, then the installtion is successful.
+* If you receive a message like below at the end of command execution, then the installtion is fine and successful.
 
 ```
 This is your host IP address: 192.168.130.197
@@ -88,6 +87,6 @@ The default users are: admin and demo
 The password: mypassword123
 ```
 
-* Login to openstack dashboard "Horizon" by using user credentials obtained in the above process. In the above case, open a browser window and paste host IP address (192.168.130.197). Login by username "admin" and password as "mypassword123"
+* Login to openstack dashboard "Horizon" by using obtaned user credentials. In the above case, open a browser window and paste host IP address (192.168.130.197). Login by username "admin" and password as "mypassword123" as set by you in the local.conf file.
 
-* Congratulations! You have successfullt setup the controller node using devstack.
+* Congratulations! You have successfully setup the controller node on your first ubuntu machine using devstack.
