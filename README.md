@@ -19,6 +19,14 @@ Other Ubuntu distributions also work fine.
 8+ GB RAM
 ```
 
+###### Update and Upgrade ubuntu OS
+
+```
+sudo apt-get update
+sudo apt-get dist-upgrade
+sudo reboot
+```
+
 ###### User Account Creation
 * Create a user with sudo priviledges.
 
