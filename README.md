@@ -46,6 +46,11 @@ stack    ALL=(ALL:ALL) ALL
 sudo su - stack
 ```
 
+* Export the path variable.
+```
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/sbin
+```
+
 ###### Get the software
 * Install "git" and clone the required software.
 
@@ -187,6 +192,11 @@ stack    ALL=(ALL:ALL) ALL
 
 ```
 sudo su - stack
+```
+
+* Export the path variable.
+```
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/sbin
 ```
 
 ###### Get the software
