@@ -1,25 +1,34 @@
-## Openstack Cloud Deployment(devstack)
+#### Openstack Cloud Deployment using devstack
 
 In this example, a multi node openstack environment is demonstrated. The setup is a minimal realization having one controller node and one compute node. Both the nodes are created on top of two x86 machines with ubuntu 16.04 distribution.   
 
-### Specifications
+##### Specifications
+
+```
 Software = devstack
 Operating System = Ubuntu 16.04 
 Other Ubuntu distributions also work fine.
+```
 
-## Step-by-step Installtion Procedure
-### Controller Node
-
-#### System Requirement
-4+ core CPU, 100+ GB Storage, 8+ GB RAM
-
-#### Getting the software
+##### Step-by-step Installation Procedure on Controller Node
+###### System Requirement
 
 ```
+4+ core CPU
+100+ GB Storage
+8+ GB RAM
+```
+
+###### Get the software
+* Install "git" and clone the required software.
+
+```
+sudo apt-get update
+sudo apt-get install git
 git clone https://git.openstack.org/openstack-dev/devstack -b stable/newton
 ```
 
-#### Environment Setup
+###### Environment Setup
 * Navigate to devstack/samples and copy the local.conf file to devstack folder.
 
 ```
@@ -61,10 +70,10 @@ PUBLIC_BRIDGE=br-ex
 OVS_BRIDGE_MAPPINGS=public:br-ex
 ```
 
-#### Run Instructions
+###### Run Instructions
 
 ```
-cd devsrack
+cd devstack
 ./stack.sh
 ```
 
@@ -90,3 +99,30 @@ The password: mypassword123
 * Login to openstack dashboard "Horizon" by using obtaned user credentials. In the above case, open a browser window and paste host IP address (192.168.130.197). Login by username "admin" and password as "mypassword123" as set by you in the local.conf file.
 
 * Congratulations! You have successfully setup the controller node on your first ubuntu machine using devstack.
+
+##### Known Issues 
+1. While running stack.sh, if you are getting below error, the update permission to some folders.
+
+```
+“”OSError: [Errno 13] Permission denied:
+```
+
+```
+sudo chown -R stack:stack devstack
+sudo chown stack: /home/stack/.cache
+sudo chown -R stack:stack /opt/stack/
+```
+
+* If you are facing issue for correct path set up, export below line to the environemnt. Alternatively, you could add this line to your environment path which persists even after reboot of the machines.
+
+```
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/sbin
+```
+* If any error like paste name deploy python error. then solution is as below : 
+
+```
+sudo apt-get install --reinstall  python-pastedeploy
+sudo apt-get install --reinstall python-paste
+```
+
+#### Thank You !
