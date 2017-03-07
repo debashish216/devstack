@@ -41,16 +41,16 @@ sudo apt-get install vim
 vim local.conf 
 ```
 
-* Edit the local.conf file as below in the controller node.
+* Edit the local.conf file as below in the controller node. My host IP is "192.168.130.197" and I wish to install everything with password "mypassword123". You may choose a different password for your setup.
 
 ```
 [[local|localrc]]
-HOST_IP=<host IP>
-SERVICE_HOST=<host IP>
-MYSQL_HOST=<host IP>
-RABBIT_HOST=<host IP>
-GLANCE_HOSTPORT=<host IP>:9292
-ADMIN_PASSWORD=<devstack admin password>
+HOST_IP=192.168.130.197
+SERVICE_HOST=192.168.130.197
+MYSQL_HOST=192.168.130.197
+RABBIT_HOST=192.168.130.197
+GLANCE_HOSTPORT=192.168.130.197:9292
+ADMIN_PASSWORD=mypassword123
 DATABASE_PASSWORD=$ADMIN_PASSWORD
 RABBIT_PASSWORD=$ADMIN_PASSWORD
 SERVICE_PASSWORD=$ADMIN_PASSWORD
