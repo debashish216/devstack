@@ -19,6 +19,25 @@ Other Ubuntu distributions also work fine.
 8+ GB RAM
 ```
 
+###### User Account Creation
+* Create a user with sudo priviledges.
+
+```
+sudo adduser stack
+```
+
+* Give "sudo" permission to the new user typing command ```sudo visudo```. Add below line.
+
+```
+stack    ALL=(ALL:ALL) ALL
+```
+
+* Navigate to the new user.
+
+```
+sudo su - stack
+```
+
 ###### Get the software
 * Install "git" and clone the required software.
 
@@ -76,6 +95,9 @@ enable_plugin heat https://git.openstack.org/openstack/heat stable/newton
 ###### Run Instructions
 
 ```
+mkdir /opt/stack
+sudo chown -R stack:stack devstack
+sudo chown -R stack:stack /opt/stack/
 cd devstack
 ./stack.sh
 ```
