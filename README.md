@@ -295,8 +295,12 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/ga
 sudo apt-get install --reinstall  python-pastedeploy
 sudo apt-get install --reinstall python-paste
 ```
-* Error : IOError: [Errno 2] No such file or directory: '/opt/stack/tempest/.tox/tempest/lib/python2.7/site-packages/appdirs-1.4.2.dist-info/METADATA
+* Error : IOError: [Errno 2] No such file or directory: '/opt/stack/tempest/.tox/tempest/lib/python2.7/site-packages/appdirs-1.4.2.dist-info/METADATA. 
+This issue happens on a fresh setup. Once the issue comes, then just unstack, stack again. You will not see the issue again.
 
+```
+./stack.sh
+```
 
 * If any error like "AssertionError: Egg-link  does not match installed location of tempest", perform below step.
 
