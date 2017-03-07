@@ -68,6 +68,9 @@ Q_USE_PROVIDERNET_FOR_PUBLIC=True
 OVS_PHYSICAL_BRIDGE=br-ex
 PUBLIC_BRIDGE=br-ex
 OVS_BRIDGE_MAPPINGS=public:br-ex
+
+#Enable heat plugin
+enable_plugin heat https://git.openstack.org/openstack/heat stable/newton
 ```
 
 ###### Run Instructions
@@ -85,7 +88,7 @@ unstack it and rerun after fixing the issue.
 ./stack.sh
 ```
 
-* If you receive a message like below at the end of command execution, then the installtion is fine and successful.
+* If you receive a message like below at the end of command execution, then the installation is fine and successful.
 
 ```
 This is your host IP address: 192.168.130.197
@@ -99,6 +102,72 @@ The password: mypassword123
 * Login to openstack dashboard "Horizon" by using obtaned user credentials. In the above case, open a browser window and paste host IP address (192.168.130.197). Login by username "admin" and password as "mypassword123" as set by you in the local.conf file.
 
 * Congratulations! You have successfully setup the controller node on your first ubuntu machine using devstack.
+
+
+##### Step-by-step Installation Procedure on Compute Node
+###### System Requirement
+
+```
+8+ core CPU
+500+ GB Storage
+8+ GB RAM
+```
+
+###### Get the software
+* Install "git" and clone the required software.
+
+```
+sudo apt-get update
+sudo apt-get install git
+git clone https://git.openstack.org/openstack-dev/devstack -b stable/newton
+```
+
+###### Environment Setup
+* Navigate to devstack/samples and copy the local.conf file to devstack folder.
+
+```
+cd devstack/samples/
+ls -li
+cp local.conf ../
+cd ..
+ls -li
+sudo apt-get install vim
+vim local.conf 
+```
+
+* Edit the local.conf file as below in the compute node.
+
+```
+[[local|localrc]]
+<edit here>
+```
+
+###### Run Instructions
+
+```
+cd devstack
+./stack.sh
+```
+
+This installation procedure normally takes 5-10 minutes depending upon the Internet speed. In case of any errors,
+unstack it and rerun after fixing the issue.
+
+```
+./unstack.sh
+./stack.sh
+```
+
+* If you receive a message like below at the end of command execution, then the installation is fine and successful.
+
+```
+This is your host IP address: 192.168.130.47
+This is your host IPv6 address: fe80::8a28:e90a:e3a8:ec90
+```
+
+* Congratulations! You have successfully setup a compute node on your second ubuntu machine using devstack. You can repeat the same procedure to add multiple compute nodes to your devstack environement.
+* In order to verify the availability of this newly created compute node at controller node, log in to the openstack dashboard using admin credentials, then navigate to the admin->hypervisors. You will be able to see a new node popping up on the dashboard screen.
+
+
 
 ##### Known Issues 
 1. While running stack.sh, if you are getting below error, the update permission to some folders.
