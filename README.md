@@ -73,7 +73,7 @@ vim local.conf
 ```
 
 [[local|localrc]]
-MY_IP=192.168.130.207
+MY_IP=192.168.130.102
 HOST_IP=$MY_IP
 SERVICE_HOST=$MY_IP
 MYSQL_HOST=$MY_IP
@@ -125,10 +125,26 @@ unstack it and rerun after fixing the issue.
 * If you receive a message like below at the end of command execution, then the installation is fine and successful.
 
 ```
-This is your host IP address: 192.168.130.197
-This is your host IPv6 address: fe80::8a28:e90a:e3a8:ec90
-Horizon is now available at http://192.168.130.197/dashboard
-Keystone is serving at http://192.168.130.197/identity/
+=========================
+DevStack Component Timing
+=========================
+Total runtime         3040
+
+run_process            76
+test_with_retry         9
+apt-get-update         15
+pip_install           157
+restart_apache_server  31
+wait_for_service       50
+apt-get                 6
+=========================
+
+
+
+This is your host IP address: 192.168.130.102
+This is your host IPv6 address: fe80::d69b:58a8:90d5:1d96
+Horizon is now available at http://192.168.130.102/dashboard
+Keystone is serving at http://192.168.130.102/identity/
 The default users are: admin and demo
 The password: mypassword123
 ```
