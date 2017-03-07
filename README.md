@@ -236,8 +236,21 @@ unstack it and rerun after fixing the issue.
 * If you receive a message like below at the end of command execution, then the installation is fine and successful.
 
 ```
-This is your host IP address: 192.168.130.47
-This is your host IPv6 address: fe80::8a28:e90a:e3a8:ec90
+=========================
+DevStack Component Timing
+=========================
+Total runtime   866
+
+run_process       9
+apt-get-update   11
+pip_install     204
+git_timed       386
+apt-get         224
+=========================
+
+This is your host IP address: 192.168.130.207
+This is your host IPv6 address: fe80::9b06:9601:1b07:93eb
+
 ```
 
 * Congratulations! You have successfully setup a compute node on your second ubuntu machine using devstack. You can repeat the same procedure to add multiple compute nodes to your devstack environement.
