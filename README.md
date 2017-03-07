@@ -1,4 +1,4 @@
-## Cloud Platform Deployment using devstack (Openstack Cloud Platform Service)
+## Openstack Cloud Deployment(devstack)
 
 In this example, a multi node openstack environment is demonstrated. The setup is a minimal realization having one controller node and one compute node. Both the nodes are created on top of two x86 machines with ubuntu 16.04 distribution.   
 
