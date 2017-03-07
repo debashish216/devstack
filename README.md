@@ -68,16 +68,18 @@ sudo apt-get install vim
 vim local.conf 
 ```
 
-* Edit the local.conf file as below in the controller node. My host IP is "192.168.130.197" and I wish to install everything with password "mypassword123". You may choose a different password for your setup.
+* Edit the local.conf file as below in the controller node. My host IP is "192.168.130.207" and I wish to install everything with password "mypassword123". You may choose a different password for your setup.
 
 ```
+
 [[local|localrc]]
-HOST_IP=192.168.130.197
-SERVICE_HOST=192.168.130.197
-MYSQL_HOST=192.168.130.197
-RABBIT_HOST=192.168.130.197
-GLANCE_HOSTPORT=192.168.130.197:9292
-ADMIN_PASSWORD=mypassword123
+MY_IP=192.168.130.207
+HOST_IP=$MY_IP
+SERVICE_HOST=$MY_IP
+MYSQL_HOST=$MY_IP
+RABBIT_HOST=$MY_IP
+GLANCE_HOSTPORT=$MY_IP:9292
+ADMIN_PASSWORD=iith
 DATABASE_PASSWORD=$ADMIN_PASSWORD
 RABBIT_PASSWORD=$ADMIN_PASSWORD
 SERVICE_PASSWORD=$ADMIN_PASSWORD
@@ -88,13 +90,15 @@ FLOATING_RANGE="192.168.130.0/24"
 IPV4_ADDRS_SAFE_TO_USE="10.0.0.0/22"
 Q_FLOATING_ALLOCATION_POOL=start=192.168.130.235,end=192.168.130.254
 PUBLIC_NETWORK_GATEWAY="192.168.130.1"
-PUBLIC_INTERFACE=<Your network interface such as eth0>
+PUBLIC_INTERFACE=enp4s0
 
 # Open vSwitch provider networking configuration
 Q_USE_PROVIDERNET_FOR_PUBLIC=True
 OVS_PHYSICAL_BRIDGE=br-ex
 PUBLIC_BRIDGE=br-ex
 OVS_BRIDGE_MAPPINGS=public:br-ex
+
+VNCSERVER_LISTEN=0.0.0.0
 
 #Enable heat plugin
 enable_plugin heat https://git.openstack.org/openstack/heat stable/newton
