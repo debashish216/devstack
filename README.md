@@ -146,6 +146,32 @@ The password: mypassword123
 500+ GB Storage
 8+ GB RAM
 ```
+###### Update and Upgrade ubuntu OS
+
+```
+sudo apt-get update
+sudo apt-get dist-upgrade
+sudo reboot
+```
+
+###### User Account Creation
+* Create a user with sudo priviledges.
+
+```
+sudo adduser stack
+```
+
+* Give "sudo" permission to the new user typing command ```sudo visudo```. Add below line.
+
+```
+stack    ALL=(ALL:ALL) ALL
+```
+
+* Navigate to the new user.
+
+```
+sudo su - stack
+```
 
 ###### Get the software
 * Install "git" and clone the required software.
