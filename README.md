@@ -95,7 +95,7 @@ enable_plugin heat https://git.openstack.org/openstack/heat stable/newton
 ###### Run Instructions
 
 ```
-mkdir /opt/stack
+sudo mkdir /opt/stack
 sudo chown -R stack:stack devstack
 sudo chown -R stack:stack /opt/stack/
 cd devstack
