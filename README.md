@@ -215,5 +215,10 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/ga
 sudo apt-get install --reinstall  python-pastedeploy
 sudo apt-get install --reinstall python-paste
 ```
+* If any error like "AssertionError: Egg-link  does not match installed location of tempest", perform below step.
+
+```
+sudo pip install . 
+sudo pip install -e .
 
 #### Thank You !
