@@ -221,7 +221,7 @@ sudo apt-get install vim
 vim local.conf 
 ```
 
-* Edit the local.conf file as below in the compute node.
+* Edit the local.conf file with below content in the compute node.
 
 ```
 [[local|localrc]]
