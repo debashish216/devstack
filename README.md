@@ -73,7 +73,7 @@ sudo apt-get install vim
 vim local.conf 
 ```
 
-* Edit the local.conf file as below in the controller node. My host IP is "192.168.130.207" and I wish to install everything with password "mypassword123". You may choose a different password for your setup.
+* Edit the local.conf file with below content in the controller node. My host IP is "192.168.130.207" and I wish to install everything with password "mypassword123". You may choose a different password for your setup.
 
 ```
 
